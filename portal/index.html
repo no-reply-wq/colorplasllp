@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Colorplas LLP</title>
 </head>
-<body>
+<body style="margin: 0; padding: 0; overflow: hidden;">
   <iframe 
     src="https://script.google.com/macros/s/AKfycbz1dXa7Y1s3osxO1skF54zocjQXV84m-SHZtQ-Td79f17zhcx0HumNHncJCDKW4WavBCA/exec"
     width="100%"
@@ -14,10 +16,12 @@
 
   <script>
     window.onload = function() {
+      // Note: Programmatic fullscreen requests on page load may be blocked by 
+      // modern browsers without direct user gesture/interaction.
       document.querySelector('iframe')
         .requestFullscreen()
         .catch((err) => {
-          console.error('Error attempting to enable full-screen mode:', err.message);
+          console.warn('Fullscreen request bypassed:', err.message);
         });
     };
   </script>
